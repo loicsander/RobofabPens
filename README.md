@@ -3,7 +3,7 @@ Robofab Pens
 
 A collection of [Robofab pens](http://robofab.org/objects/pen.html) doing various things with outlines.
 
-# StepPen.py
+## StepPen.py
 
 The StepPen is a basic pen not meant to be used in itself, it serves as a basis for subclassing. 
 
