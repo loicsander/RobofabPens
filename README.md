@@ -15,6 +15,12 @@ filterPen = stepPen.FlattenPen(otherPen, pace=50)
 ```
 ![alt tag](images/stepPen.FlattenPen.jpg)
 
++ **SpikePen**: Adds spikes to an outline… (similar to robofab.pens.filterPen.spikeGlyph).
+```python
+filterPen = stepPen.SpikePen(otherPen, pace=50, spikeLength=15)
+```
+![alt tag](images/stepPen.SpikePen.jpg)
+
 + **JitterPen**: flatten curves with added noise.
 ```python
 filterPen = stepPen.JitterPen(otherPen, pace=50, xAmplitude=6, yAmplitude=8)
