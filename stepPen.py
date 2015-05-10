@@ -3,10 +3,13 @@ from __future__ import division
 from math import pi, radians, cos, sin, atan2, atan, hypot
 import random
 
+"""
+Custom Robofab pens — Loïc Sander, april/may 2015.
+"""
+
 from robofab.pens.adapterPens import PointToSegmentPen, SegmentToPointPen
 from robofab.pens.reverseContourPointPen import ReverseContourPointPen
 from fontTools.pens.basePen import BasePen
-
 
 def circle(pen, (cx, cy), radius, roundness=0.55):
     r = radius
