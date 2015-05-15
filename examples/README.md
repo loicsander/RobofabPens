@@ -13,33 +13,6 @@ Two pens that affect an outline’s point coordinates. The first one ```Abstract
 
 **Basic usage**
 ```python
-from robofab.world import RGlyph
-
-# create an empty glyph
-glyph = RGlyph()
-drawingPen = glyph.getPen()
-
-# draw a square of 100x100 units with the drawing pen
-drawingPen.moveTo((0, 0))
-drawingPen.lineTo((0, 100))
-drawingPen.lineTo((100, 100))
-drawingPen.lineTo((100, 0))
-drawingPen.closePath()
-
-# the glyph now consists of a 100x100 units square
-
-# create the shiftPen with shift values and give it the drawing pen
-shiftPen = ShiftPen(drawingPen, xShift=50, yShift=50)
-
-# draw the existing glyph with the shiftPen
-glyph.draw(shiftPen)
-```
-
-the square in the glyph has now moved by 50 units, up and rightwards. In fact, there are now two squares in the glyph: the initial one, and the shifted one, since we drew the shifted square with the same pen as before without clearing the glyph’s contour.
-
-If we wanted to simply move the square in the initial glyph, we need an additional step:
-
-```python
 
 # create an empty glyph
 glyph = RGlyph()
@@ -61,15 +34,17 @@ copyDrawingPen = glyphCopy.getPen()
 # now we can draw the square from the initial glyph unto the copy
 glyph.draw(copyDrawingPen)
 
+# at this point, glyph and glyphCopy are identical
+
 # the square is copied, so we can now clear the initial glyph’s contour before drawing the new shifted square
 
 glyph.clearContours()
 
-# create the shiftPen with shift values and give it the drawing pen
+# create the shiftPen with shift values and give it the initial drawing pen
 shiftPen = ShiftPen(drawingPen, xShift=50, yShift=50)
 
 # draw the existing glyph with the shiftPen
-glyph.draw(shiftPen)
+glyphCopy.draw(shiftPen)
 ```
 
 We now have effectively move the 100x100 units square inside the initial glyph.
