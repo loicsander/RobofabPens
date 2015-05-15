@@ -9,7 +9,7 @@ A collection of [Robofab pens](http://robofab.org/objects/pen.html) doing variou
 
 ## ShiftPen
 
-Two pens that affect an outline’s point coordinates. The first one ```AbstractShiftPen``` only collects the coordinates and returns the shifted value (as a printed output). The second one ```ShiftPen``` draws a shifted outline if provided with an external pen. Such a basic pen (a subclass of fontTools BasePen) has no drawing capabilities of its own; to draw something, it needs to wield another pen, the one that really draws and belongs to a glyph.
+Two pens that affect an outline’s point coordinates. The first one ```AbstractShiftPen``` only collects the coordinates and returns the shifted value (as a printed output). The second one ```ShiftPen``` draws a shifted outline if provided with an external pen. Such a basic pen (a subclass of fontTools’ BasePen) has no drawing capabilities of its own; to draw something, it needs to wield another pen, the one that really draws and belongs to a glyph.
 
 **Basic usage**
 ```python
