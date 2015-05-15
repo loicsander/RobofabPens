@@ -3,9 +3,9 @@ Robofab Pens
 
 A collection of [Robofab pens](http://robofab.org/objects/pen.html) doing various things with outlines.
 
-# /Examples
+**RobofabPens/Examples**
 
-Here are some simpler pens doing mostly basic things with and about outlines. I’m adding these hoping to help those who wish to better understand how robofab pen works. I’ll try adding a variety of examples.
+*Here are some simpler pens doing mostly basic things with and about outlines. I’m adding these hoping to help those who wish to better understand how robofab pen works. I’ll try adding a variety of examples.*
 
 ## ShiftPen
 
