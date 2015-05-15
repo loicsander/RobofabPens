@@ -47,4 +47,4 @@ shiftPen = ShiftPen(drawingPen, xShift=50, yShift=50)
 glyphCopy.draw(shiftPen)
 ```
 
-We now have effectively move the 100x100 units square inside the initial glyph.
+We now have effectively moved the 100x100 units square inside the initial glyph.
