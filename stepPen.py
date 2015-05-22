@@ -332,7 +332,6 @@ class SpikePen(StepPen):
     def closePath(self):
         if len(self._currentContour):
             self._lineTo(self._currentContour[0])
-#            self.drawStep(self._currentContour[0], 0, 0)
         if self.otherPen is not None and self.otherPen.contour is not None:
             self.otherPen.closePath()
         self.previousPoint = None
@@ -340,18 +339,27 @@ class SpikePen(StepPen):
 
     def drawStep(self, (x1, y1), tanAngle, progress):
 
+        l = self.spikeLength
+        x1, y1 = self.pushPoint((x1, y1), tanAngle, l)
+
         if self.move_ == True:
-           self.otherPen.moveTo((x1, y1))
+            self.otherPen.moveTo((x1, y1))
 
         elif self.move_ == False:
-
-            x0, y0 = self.pacedPoints[-1]
-            l = self.spikeLength
+            x0, y0 = self.pushPoint(self.pacedPoints[-1], tanAngle, l)
             d = calcDistance((x0, y0), (x1, y1))
-            a = calcAngle((x0, y0), (x1, y1))
-            sa = atan(l / (d/2))
-            sl = hypot(d/2, l)
-            sx = x0 + (sl * cos(sa+a))
-            sy = y0 + (sl * sin(sa+a))
-            self.otherPen.lineTo((sx, sy))
-            self.otherPen.lineTo((x1, y1))
+            if d > 0:
+                a = calcAngle((x0, y0), (x1, y1))
+                sa = atan(l / (d/2))
+                sl = hypot(d/2, l)
+                sx = x0 + (sl * cos(sa+a))
+                sy = y0 + (sl * sin(sa+a))
+                self.otherPen.lineTo((sx, sy))
+                self.otherPen.lineTo((x1, y1))
+
+    def pushPoint(self, (x, y), tanAngle, length):
+        d = length / 2
+        angle = tanAngle - (pi/2)
+        px = x + (d * cos(angle))
+        py = y + (d * sin(angle))
+        return px, py
