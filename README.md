@@ -3,7 +3,7 @@ Robofab Pens
 
 A collection of [Robofab pens](http://robofab.org/objects/pen.html) doing various things with outlines.
 
-## StepPen.py
+## stepPen.py
 
 The StepPen is a basic pen not meant to be used in itself, it serves as a basis for subclassing. 
 
@@ -43,3 +43,8 @@ filterPen = stepPen.DashPen(otherPen, pace=50, length=25, normal=False)
 filterPen = stepPen.DotPen(otherPen, pace=50, radius=15)
 ```
 ![alt tag](images/stepPen.DotPen.jpg)
+
+
+## cleanPointPen.py
+
+Pen to clean up outlines by filtering out overlapping points and   small junk contours (user can define a minimal area to filter small contours out.)
