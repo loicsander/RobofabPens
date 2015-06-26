@@ -45,6 +45,12 @@ filterPen = stepPen.DotPen(otherPen, pace=50, radius=15)
 ![alt tag](images/stepPen.DotPen.jpg)
 
 
+## translationPen.py
+
+This pen allows for the drawing of a translated shape according to defined angle and width/length.
+
+![alt tag](images/translationPen.png)
+
 ## cleanPointPen.py
 
 Pen to clean up outlines by filtering out overlapping points and   small junk contours (user can define a minimal area to filter small contours out.)
