@@ -116,13 +116,13 @@ class TranslationPen(BasePen):
 
 
     def splitAtAngledExtremas(self, pt0, pt1, pt2, pt3):
-        shadowAngle = self.frontAngle
+        frontAngle = self.frontAngle
         segments = []
         for i in range(101):
             t = i / 100
             nx, ny = firstDerivative(pt0, pt1, pt2, pt3, t)
             tanAngle = atan2(ny, nx)
-            if tan(shadowAngle - _ANGLE_EPSILON) < tan(tanAngle) < tan(shadowAngle + _ANGLE_EPSILON):
+            if tan(frontAngle - _ANGLE_EPSILON) < tan(tanAngle) < tan(frontAngle + _ANGLE_EPSILON):
                 newSegments = splitCubicAtT(pt0, pt1, pt2, pt3, t)
                 if len(newSegments) > 1:
                     segments = newSegments
